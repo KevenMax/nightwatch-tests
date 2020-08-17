@@ -1,8 +1,11 @@
 {
-  "name": "nightwatch-app",
+  "name": "nightwatch-tests",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "test": "nightwatch"
+  },
   "devDependencies": {
     "chromedriver": "^84.0.1",
     "install": "^0.13.0",
