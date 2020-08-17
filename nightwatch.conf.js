@@ -1,12 +1,10 @@
-const Services = {}; loadServices();
-
 module.exports = {
   src_folders: ['tests'],
 
   webdriver: {
     start_process: true,
     port: 9515,
-    server_path: (Services.chromedriver ? Services.chromedriver.path : '')
+    server_path: require('chromedriver').path,
   },
 
   test_settings: {
@@ -18,17 +16,3 @@ module.exports = {
     }
   }
 };
-
-function loadServices() {
-  try {
-    Services.seleniumServer = require('selenium-server');
-  } catch (err) { }
-
-  try {
-    Services.chromedriver = require('chromedriver');
-  } catch (err) { }
-
-  try {
-    Services.geckodriver = require('geckodriver');
-  } catch (err) { }
-}
